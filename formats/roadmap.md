@@ -1,6 +1,6 @@
 # Research Roadmap: <program name>
 
-> Program Charter format `roadmap`. Reader: the team, the sponsor, close partners. Length: 2 to 3 pages plus cards. Updated: at every review.
+> Research Program Charter format `roadmap` (spec: `spec/roadmap.yaml`). Reader: the team, the sponsor, close partners. Updated: at every review.
 > Delete these guidance lines as you fill the sections in.
 
 ## 1. Path
@@ -13,12 +13,12 @@
 > This quarter, this year, longer: what we expect to be true at each.
 
 
-## 3. Next 90 days
+## 3. Next 90 days  *(required in the charter)*
 
 > Table of commitments: what, owner, traced to, test, date.
 
 
-## 4. Go / no-go
+## 4. Go / no-go  *(required in the charter)*
 
 > Dated criteria written before results exist, and the decision each one unlocks.
 
@@ -28,7 +28,7 @@
 > Register: what, why, share of envelope used, number of reviews survived.
 
 
-## 6. Risks and dependencies
+## 6. Risks and dependencies  *(required in the charter)*
 
 > Top risks. Dependencies on teams the program does not control.
 

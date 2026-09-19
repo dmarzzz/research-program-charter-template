@@ -1,0 +1,59 @@
+# Research Program Charter: top-level structure
+# A format for describing a research program. One file per part in this folder.
+
+format:
+  name: Research Program Charter
+  version: "0.3"
+  status: draft
+
+masthead:                   # a box on page one; the lines an approver has to see
+  - program_name
+  - lead
+  - sponsor                 # who signs it, who funds it, who can end it
+  - people                  # names with time fractions
+  - envelope                # total resources, not line items
+  - end                     # end date or end condition
+  - next_review
+  - on_offer                # what outsiders can get; "nothing yet" is a valid answer
+  - version
+
+parts:                      # in order, from the most stable to the most volatile
+  - id: space
+    question: "Where? What territory is this, why does it matter, why now?"
+    writes_as: "about the world, no \"we\""
+    spec: space.yaml
+  - id: thesis
+    question: "What do we claim can be made true here, and why us?"
+    writes_as: "first person; a claim a reasonable peer could dispute"
+    spec: thesis.yaml
+  - id: open_problems
+    question: "What would have to be true, and what do we not know yet?"
+    writes_as: "questions; no dates, no owners"
+    spec: open-problems.yaml
+  - id: roadmap
+    question: "In what order, by when, and what are we doing now?"
+    writes_as: "commitments; dates, owners, tests"
+    spec: roadmap.yaml
+  - id: terms
+    question: "Under what authority, with whom, for how long, and how does it end?"
+    writes_as: "constitutional; the only part that binds anyone"
+    spec: terms.yaml
+
+supporting_documents:
+  - {id: one_pager,         spec: one-pager.yaml,         when: always; the primary artifact}
+  - {id: review_note,       spec: review-note.yaml,       when: at every review}
+  - {id: discovery_summary, spec: discovery-summary.yaml, when: optional; once, before charter v0.1}
+  - {id: closing_report,    spec: closing-report.yaml,    when: at the end of the term}
+
+rules:
+  - "one review cadence. At each review, update the roadmap, then ask whether anything learned changes a part above it."
+  - "parts change when a result, a budget, or a departure forces them to. No calendars per part."
+  - "traceability is a check run at review, not a gate. Untraced work is allowed and labelled."
+  - "untraced work that survives two reviews either amends the thesis or moves out of the program."
+  - "a premise that is falsified forces a new charter version. The thesis is revised from below as well as from above."
+  - "a fact lives in one place. No summary-plus-deeper-copy of the same content."
+  - "criteria are written before results. Criteria written after get fitted to the results."
+
+lifecycle: [discovery, charter, running, closing]
+optional_steps:
+  call: "publishing the open problems as an invitation. Only meaningful when on_offer is not empty."

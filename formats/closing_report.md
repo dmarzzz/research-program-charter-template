@@ -1,6 +1,6 @@
 # Closing report: <program name>
 
-> Program Charter format `closing_report`. Reader: the sponsor, the steward, the field. Length: 3 pages. Updated: never.
+> Research Program Charter format `closing_report` (spec: `spec/closing-report.yaml`). Reader: the sponsor, the steward, the field. Updated: never.
 > Delete these guidance lines as you fill the sections in.
 
 ## 1. What exists now

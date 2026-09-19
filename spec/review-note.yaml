@@ -1,0 +1,22 @@
+# Research Program Charter: Review note: <date>
+id: review_note
+title: "Review note: <date>"
+belongs_to: "all"
+when_written: "at every review"
+reader: "the team and the sponsor"
+updated: "never; it is a record"
+
+sections:
+  - {id: learned, title: "What we learned", prompt: "Results since the last review, each with its evidence."}
+  - {id: commitments, title: "Commitments", prompt: "Met, missed, changed. One line each."}
+  - {id: decisions, title: "Go / no-go decisions taken", prompt: "Which criteria came due and what was decided."}
+  - {id: upward, title: "Does anything change a part above?", prompt: "Space, thesis, open problems: yes or no for each, and what. A falsified premise is recorded here."}
+  - {id: untraced, title: "Untraced work", prompt: "New, resolved, and ageing. Anything at its second review gets resolved now."}
+  - {id: next, title: "Next", prompt: "Decisions, owners, next review date, whether the version bumps."}
+
+checks:
+  - "took under 90 minutes"
+  - "the \"change a part above\" question was answered explicitly for each part"
+
+common_failures:
+  - "a status update with no decisions"

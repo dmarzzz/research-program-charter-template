@@ -1,0 +1,39 @@
+# Research Program Charter: Research Roadmap: <program name>
+id: roadmap
+title: "Research Roadmap: <program name>"
+question: "In what order, by when, and what are we doing now?"
+writes_as: "commitments; dates, owners, tests"
+when_written: "the next-90-days table and the go/no-go criteria are required inside the charter. The standalone document is written when the sponsor or a partner needs the sequencing argument."
+reader: "the team, the sponsor, close partners"
+updated: "at every review"
+
+# required: true means the section must exist, at summary depth, inside the charter itself.
+sections:
+  - {id: path, title: "Path", required: false, prompt: "Our route through the tree: which nodes, in what order, and why this order."}
+  - {id: horizons, title: "Horizons", required: false, prompt: "This quarter, this year, longer: what we expect to be true at each."}
+  - {id: next, title: "Next 90 days", required: true, prompt: "Table of commitments: what, owner, traced to, test, date."}
+  - {id: go_no_go, title: "Go / no-go", required: true, prompt: "Dated criteria written before results exist, and the decision each one unlocks."}
+  - {id: untraced, title: "Untraced work", required: false, prompt: "Register: what, why, share of envelope used, number of reviews survived."}
+  - {id: risks, title: "Risks and dependencies", required: true, prompt: "Top risks. Dependencies on teams the program does not control."}
+  - {id: parked, title: "Parking lot", required: false, prompt: "What we are deliberately not doing now, so nobody has to ask."}
+
+sub_formats:
+  commitment_card:
+    id:            "short"
+    statement:     "By DATE we will see Y, measured by M against baseline B."
+    owner:         "exactly one"
+    traced_to:     "a question id, or 'untraced'"
+    test:          "the check that decides it"
+    judged_by:     "continuation (research) | kill rule (product, arena)"
+    status:        "proposed | active | passed | stopped"
+    heavier_form:  "an optional fuller bet card, not yet specified"
+
+checks:
+  - "every commitment has one owner, a date, and a test"
+  - "every commitment cites a question id or is tagged untraced"
+  - "untraced work is within its share of the envelope"
+
+common_failures:
+  - "a list of activities with no tests"
+  - "criteria written after the result"
+  - "a path that is just the order things were started"

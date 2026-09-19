@@ -1,0 +1,30 @@
+# Research Program Charter: Opportunity Space: <name>
+id: space
+title: "Opportunity Space: <name>"
+question: "Where? What territory is this, why does it matter, why now?"
+writes_as: "about the world, no \"we\""
+when_written: "inside the charter as one page. Standalone only when a second program or an outside organisation shares the space."
+reader: "the field, including competitors"
+updated: "when the landscape or a crux moves"
+
+# required: true means the section must exist, at summary depth, inside the charter itself.
+sections:
+  - {id: boundary, title: "Name and boundary", required: true, prompt: "The name. What is inside, what is outside, which neighbouring spaces it touches."}
+  - {id: matters, title: "Why it matters", required: true, prompt: "Who gains or loses what if this space develops well or badly. Magnitudes with sources."}
+  - {id: why_now, title: "Why now", required: true, prompt: "Three trends at most. Each with the evidence that it is real."}
+  - {id: shared, title: "Shared beliefs", required: true, prompt: "Short list of claims most of the field accepts. Keep it short; these orient nobody on their own."}
+  - {id: cruxes, title: "Cruxes", required: true, prompt: "Two to five contested claims, stated neutrally. For each: the claim, the strongest case for, the strongest case against, and what evidence would move it."}
+  - {id: landscape, title: "Landscape", required: true, prompt: "Table: who is here, what they cover, what they left open, how their work and ours connect."}
+  - {id: asset, title: "Shared assets", required: false, prompt: "What others can use today: an arena, a benchmark, a dataset, a convening, money. How to get access."}
+  - {id: seeds, title: "Seeds", required: false, prompt: "Questions in the space that sit outside any program. Small, exploratory, unowned."}
+  - {id: steward, title: "Steward and citation", required: false, prompt: "Who maintains this document, how to cite it, version."}
+
+checks:
+  - "no \"we\" outside the shared assets and steward sections"
+  - "each crux names someone who holds each side, or cites them"
+  - "a competitor could publish it under their own name changing only the steward"
+
+common_failures:
+  - "beliefs everyone accepts presented as insight"
+  - "our thesis smuggled in as a fact about the world"
+  - "a landscape that lists nobody doing better work than us"

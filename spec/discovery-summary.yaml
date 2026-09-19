@@ -1,0 +1,20 @@
+# Research Program Charter: Discovery summary: <space>
+id: discovery_summary
+title: "Discovery summary: <space>"
+belongs_to: "before the charter"
+when_written: "optional; written once, before charter v0.1"
+reader: "whoever will draft the thesis"
+updated: "never"
+
+sections:
+  - {id: tried, title: "What we tried", prompt: "Workshops, short projects, prototypes, conversations."}
+  - {id: artifacts, title: "What exists", prompt: "Artifacts with links and an honest grade for each."}
+  - {id: surprised, title: "What surprised us", prompt: "The results nobody predicted."}
+  - {id: cruxes, title: "Cruxes it surfaced", prompt: "Disagreements that turned out to matter. These seed the space."}
+  - {id: toward, title: "Toward a thesis", prompt: "The claim the evidence now supports, and what it still does not."}
+
+checks:
+  - "at least one surprise is recorded"
+
+common_failures:
+  - "a list of events with no findings"

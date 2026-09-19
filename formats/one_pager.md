@@ -1,6 +1,6 @@
 # <Program name>: one page
 
-> Program Charter format `one_pager`. Reader: anyone; the primary artifact. Length: 1 page. Updated: at every review.
+> Research Program Charter format `one_pager` (spec: `spec/one-pager.yaml`). Reader: anyone; the primary artifact. Updated: at every review.
 > Delete these guidance lines as you fill the sections in.
 
 ## 1. Masthead

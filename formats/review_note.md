@@ -1,6 +1,6 @@
 # Review note: <date>
 
-> Program Charter format `review_note`. Reader: the team and the sponsor. Length: 1 page. Updated: never; it is a record.
+> Research Program Charter format `review_note` (spec: `spec/review-note.yaml`). Reader: the team and the sponsor. Updated: never; it is a record.
 > Delete these guidance lines as you fill the sections in.
 
 ## 1. What we learned

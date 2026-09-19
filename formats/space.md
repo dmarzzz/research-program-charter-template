@@ -1,34 +1,34 @@
 # Opportunity Space: <name>
 
-> Program Charter format `space`. Reader: the field, including competitors. Length: 3 to 5 pages. Updated: when the landscape or a crux moves.
+> Research Program Charter format `space` (spec: `spec/space.yaml`). Reader: the field, including competitors. Updated: when the landscape or a crux moves.
 > Delete these guidance lines as you fill the sections in.
 
-## 1. Name and boundary
+## 1. Name and boundary  *(required in the charter)*
 
 > The name. What is inside, what is outside, which neighbouring spaces it touches.
 
 
-## 2. Why it matters
+## 2. Why it matters  *(required in the charter)*
 
 > Who gains or loses what if this space develops well or badly. Magnitudes with sources.
 
 
-## 3. Why now
+## 3. Why now  *(required in the charter)*
 
 > Three trends at most. Each with the evidence that it is real.
 
 
-## 4. Shared beliefs
+## 4. Shared beliefs  *(required in the charter)*
 
 > Short list of claims most of the field accepts. Keep it short; these orient nobody on their own.
 
 
-## 5. Cruxes
+## 5. Cruxes  *(required in the charter)*
 
 > Two to five contested claims, stated neutrally. For each: the claim, the strongest case for, the strongest case against, and what evidence would move it.
 
 
-## 6. Landscape
+## 6. Landscape  *(required in the charter)*
 
 > Table: who is here, what they cover, what they left open, how their work and ours connect.
 

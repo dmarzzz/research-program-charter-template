@@ -1,0 +1,32 @@
+# Research Program Charter: Program Thesis: <program name>
+id: thesis
+title: "Program Thesis: <program name>"
+question: "What do we claim can be made true here, and why us?"
+writes_as: "first person; a claim a reasonable peer could dispute"
+when_written: "inside the charter at summary depth. Standalone when a funder or peer reviewer asks."
+reader: "funders, peers, prospective collaborators"
+updated: "on a version bump; a falsified premise forces one"
+
+# required: true means the section must exist, at summary depth, inside the charter itself.
+sections:
+  - {id: simply, title: "Simply stated", required: true, prompt: "200 words, no jargon. Ends with what is not in scope."}
+  - {id: example, title: "Worked example", required: false, prompt: "One concrete case, carried through the rest of the document and the open problems."}
+  - {id: positions, title: "Positions", required: true, prompt: "Our side of each crux in the space, and why."}
+  - {id: premises, title: "Premises", required: true, prompt: "For the goal to be true, these have to be true. For each: the statement, why we believe it, the result that would make us drop it, and the area of open problems it generates."}
+  - {id: end_state, title: "Success at the end", required: true, prompt: "What exists at the end of the term that does not exist now, and how anyone would check."}
+  - {id: baseline, title: "Baseline", required: true, prompt: "How this is done today, by whom, and the thing we have to beat."}
+  - {id: why_us, title: "Why us", required: true, prompt: "Evidence, not adjectives."}
+  - {id: scope, title: "Not in scope", required: true, prompt: "What a reader might assume we are doing and we are not."}
+  - {id: transition, title: "Transition", required: true, prompt: "Who receives the result, and what they would need to see to accept it."}
+  - {id: unknowns, title: "What we are still trying to figure out", required: true, prompt: "The questions about the program itself we would most like a reader to argue with."}
+  - {id: log, title: "Update log", required: false, prompt: "Version, date, what changed and why."}
+
+checks:
+  - "a reasonable peer could disagree with every position"
+  - "every premise has a drop condition written before the work started"
+  - "covers the classic questions: what are you trying to do, how is it done today, what is new, who cares, what are the risks, what are the exams (cost and time live in the terms and the roadmap)"
+
+common_failures:
+  - "premises that are restatements of the goal"
+  - "the why-us section made of credentials instead of results"
+  - "success at the end described as activity instead of a thing that exists"

@@ -1,0 +1,50 @@
+# Research Program Charter: Open Problems in <space>
+id: open_problems
+title: "Open Problems in <space>"
+question: "What would have to be true, and what do we not know yet?"
+writes_as: "questions; no dates, no owners"
+when_written: "the question list is required inside the charter. The standalone public document is written when there is something on offer to outsiders."
+reader: "outside researchers and builders"
+updated: "at every review; ids are never renumbered or reused"
+
+# required: true means the section must exist, at summary depth, inside the charter itself.
+sections:
+  - {id: how_to_use, title: "How to use this document", required: false, prompt: "What is on offer, how to claim a question, who to contact."}
+  - {id: map, title: "The map", required: false, prompt: "The tree as a figure: questions and capabilities as nodes, requires as edges, status and who is on each node."}
+  - {id: areas, title: "Areas", required: false, prompt: "One paragraph each: the input, the output, which premise it serves, or that it is cross-cutting."}
+  - {id: questions, title: "Questions", required: true, prompt: "One card per question, grouped by area. Format below."}
+  - {id: hazards, title: "Hazards", required: false, prompt: "Questions that should be sequenced defensively or not accelerated, and why."}
+  - {id: contribute, title: "Contributing and credit", required: false, prompt: "How an answer is submitted, how the list changes in response, how credit is given."}
+  - {id: changes, title: "Change log", required: false, prompt: "Questions added, answered, retired. Dates."}
+
+sub_formats:
+  question_card:
+    id:                 "stable, never renumbered"
+    question:           "one sentence"
+    serves:             "the premise or area it belongs to"
+    answer_looks_like:  "what would count as an answer"
+    first_step:         "the smallest useful contribution"
+    status:             "open | being worked | answered | retired"
+    prior_work:         "links"
+    skill_to_start:     "what someone needs to know"
+    who_is_on_it:       "names, may include outsiders"
+    contact:            "optional"
+    hazard:             "optional"
+  tree:
+    maintainer:  "a named person"
+    built_by:    "backcasting from the end state with outside experts"
+    nodes:       "{id, kind: question | capability | external, label, area, status, who}"
+    edges:       "{from, to, kind: requires}"
+    reviewed:    "date"
+
+publishes_as: "Open Problems in <space>"
+
+checks:
+  - "an outsider can pick a question and know the first step without talking to us"
+  - "every question says what an answer looks like"
+  - "the tree names its maintainer and its last review date"
+
+common_failures:
+  - "questions only we could work on"
+  - "a tree with no external nodes"
+  - "renumbering after a reorganisation"

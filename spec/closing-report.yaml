@@ -1,0 +1,21 @@
+# Research Program Charter: Closing report: <program name>
+id: closing_report
+title: "Closing report: <program name>"
+belongs_to: "after the term"
+when_written: "at the end of the term"
+reader: "the sponsor, the steward, the field"
+updated: "never"
+
+sections:
+  - {id: end_state, title: "What exists now", prompt: "Against the success-at-end statement and the baseline."}
+  - {id: premises, title: "Premises", prompt: "Held, dropped, or still open. With the evidence."}
+  - {id: questions, title: "Questions", prompt: "Answered, opened, retired."}
+  - {id: handover, title: "Handover", prompt: "What goes to whom: results, the space, the open problems, the tree."}
+  - {id: ending, title: "Which ending", prompt: "Graduate, hand off, or stop, and the condition that triggered it."}
+  - {id: again, title: "What we would do differently", prompt: "About the work, and about this format."}
+
+checks:
+  - "a named steward has accepted the handover"
+
+common_failures:
+  - "a success story with no dropped premises"

@@ -1,0 +1,26 @@
+# Research Program Charter: <Program name>: one page
+id: one_pager
+title: "<Program name>: one page"
+belongs_to: "all"
+when_written: "always"
+reader: "anyone; the primary artifact"
+updated: "at every review"
+
+sections:
+  - {id: masthead, title: "Masthead", prompt: "Box. Lead, sponsor, people with time fractions, envelope, end, next review, what is on offer, version."}
+  - {id: goal, title: "Goal", prompt: "The goal sentence, in plain words."}
+  - {id: space, title: "The space in three lines", prompt: "Name. What is inside and outside. Why now."}
+  - {id: positions, title: "Where we stand", prompt: "Our side of each crux, one line each."}
+  - {id: premises, title: "What has to be true", prompt: "Three to five premises, one line each, each ending with the result that would make us drop it."}
+  - {id: end_state, title: "What exists at the end", prompt: "What will exist that does not exist now, next to the baseline it has to beat."}
+  - {id: next, title: "Next 90 days", prompt: "Three commitments with an owner and a date."}
+  - {id: ask, title: "The ask and the offer", prompt: "What we need from the reader. What the reader can get from us."}
+
+checks:
+  - "a stranger can say back the goal and one premise after two minutes"
+  - "no adjective without a number or a source"
+  - "fits on one page without shrinking the type"
+
+common_failures:
+  - "a mission statement where the goal sentence should be"
+  - "premises that could not be false"

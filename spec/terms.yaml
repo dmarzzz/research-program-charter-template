@@ -1,0 +1,31 @@
+# Research Program Charter: Terms: <program name>
+id: terms
+title: "Terms: <program name>"
+question: "Under what authority, with whom, for how long, and how does it end?"
+writes_as: "constitutional; the only part that binds anyone"
+when_written: "always, inside the charter. Its key lines are repeated in the masthead."
+reader: "the sponsor and the team"
+updated: "rarely; by the amendment rule it contains"
+
+# required: true means the section must exist, at summary depth, inside the charter itself.
+sections:
+  - {id: purpose, title: "Purpose", required: false, prompt: "One sentence. Points to the thesis."}
+  - {id: authority, title: "Sponsor and authority", required: true, prompt: "Who signs, who funds, who can end it. What the program may decide on its own. Who approves a version bump."}
+  - {id: people, title: "People", required: true, prompt: "Names, roles, time fractions. Investigators named against questions where that is real."}
+  - {id: envelope, title: "Envelope", required: true, prompt: "Total resources, not line items. The share reserved for untraced work."}
+  - {id: term, title: "Term and review", required: true, prompt: "Start, end date or end condition, the one review cadence."}
+  - {id: reporting, title: "Reporting", required: true, prompt: "What the sponsor sees, and how often."}
+  - {id: openness, title: "Openness", required: true, prompt: "What is published, what is commercial, who decides, and the default when nobody has decided."}
+  - {id: judging, title: "Judging", required: true, prompt: "How research continuation is judged. How product expansion is judged. Kept separate."}
+  - {id: endings, title: "Endings", required: true, prompt: "Graduate, hand off, stop: the condition that triggers each."}
+  - {id: stewardship, title: "Stewardship", required: true, prompt: "Who inherits the space, the open problems, and the tree when the program ends."}
+  - {id: amendments, title: "Amendments", required: false, prompt: "How the charter changes, and what forces a new version."}
+  - {id: signed, title: "Signed", required: false, prompt: "Names and date."}
+
+checks:
+  - "someone outside the team can tell who can stop the program and on what grounds"
+  - "time fractions add up to the people actually available"
+
+common_failures:
+  - "authority described as consensus"
+  - "an end condition nobody could observe"

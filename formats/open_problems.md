@@ -1,6 +1,6 @@
 # Open Problems in <space>
 
-> Program Charter format `open_problems`. Reader: outside researchers and builders. Length: as long as the list needs; one paragraph per area, one card per question. Updated: at every review; ids are never renumbered or reused.
+> Research Program Charter format `open_problems` (spec: `spec/open-problems.yaml`). Reader: outside researchers and builders. Updated: at every review; ids are never renumbered or reused.
 > Delete these guidance lines as you fill the sections in.
 
 ## 1. How to use this document
@@ -18,7 +18,7 @@
 > One paragraph each: the input, the output, which premise it serves, or that it is cross-cutting.
 
 
-## 4. Questions
+## 4. Questions  *(required in the charter)*
 
 > One card per question, grouped by area. Format below.
 

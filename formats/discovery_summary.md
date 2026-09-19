@@ -1,6 +1,6 @@
 # Discovery summary: <space>
 
-> Program Charter format `discovery_summary`. Reader: whoever will draft the thesis. Length: 2 pages. Updated: never.
+> Research Program Charter format `discovery_summary` (spec: `spec/discovery-summary.yaml`). Reader: whoever will draft the thesis. Updated: never.
 > Delete these guidance lines as you fill the sections in.
 
 ## 1. What we tried
