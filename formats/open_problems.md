@@ -41,7 +41,7 @@
 ### Question card (copy per item)
 
 ```yaml
-id:    # stable, never renumbered
+id:    # Q<number>, for example Q7. Stable: never renumbered, never reused.
 question:    # one sentence
 serves:    # the premise or area it belongs to
 answer_looks_like:    # what would count as an answer

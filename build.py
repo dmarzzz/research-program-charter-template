@@ -11,6 +11,8 @@ for f in sorted((here / "spec").glob("*.yaml")):
         continue
     t = f"# {d['title']}\n\n"
     t += f"> Research Program Charter format `{d['id']}` (spec: `spec/{f.name}`). Reader: {d['reader']}. Updated: {d['updated']}.\n"
+    if d.get("goal"):
+        t += f"> Goal: {' '.join(d['goal'].split())}\n"
     t += "> Delete these guidance lines as you fill the sections in.\n\n"
     for i, s in enumerate(d["sections"], 1):
         tag = "  *(required in the charter)*" if s.get("required") else ""

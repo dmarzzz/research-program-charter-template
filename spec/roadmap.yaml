@@ -1,39 +1,73 @@
 # Research Program Charter: Research Roadmap: <program name>
 id: roadmap
 title: "Research Roadmap: <program name>"
-question: "In what order, by when, and what are we doing now?"
-writes_as: "commitments; dates, owners, tests"
-when_written: "the next-90-days table and the go/no-go criteria are required inside the charter. The standalone document is written when the sponsor or a partner needs the sequencing argument."
-reader: "the team, the sponsor, close partners"
-updated: "at every review"
+question: "What is being worked on, what stage is each thing in, how do the pieces depend on each other, and when is each next decided?"
+writes_as: "commitments; stages, owners, decision dates"
+when_written: "the map, the items table and the decisions due are required inside the charter. The standalone document is written when the sponsor or a partner needs the sequencing argument."
+reader: "the team, the sponsor, close partners, and anyone trying to find where their work fits"
+updated: "at every review, and immediately when something changes stage"
+
+goal: >
+  One place where anyone can see, in thirty seconds, what the program is working
+  on, what stage each thing is in, how the pieces connect, and when each will
+  next be decided. If it exists, is roughly right, and people can find it, it is
+  doing its job.
+
+it_is_not:
+  - "a schedule. Dates on a roadmap are decision dates, not delivery estimates."
+  - "a tracker with so many fields that nobody updates it"
+  - "a substitute for team-level planning or specs"
+  - "the open problems. Those say what is unknown; the roadmap says what is being done about it."
+
+principles:
+  - "appetite over estimates: for each item at each stage, say how much time and resource you are willing to spend, not how long you think it will take"
+  - "pre-committed decision dates: every item past the research stage has a date by which it is judged. If its criteria are not met by then, it is dropped by default unless someone makes the case to continue."
+  - "ideas do not need owners; components do. Research-stage items are tracked for awareness. From proof of concept on, each has one accountable person."
+  - "progression is not strictly linear: a proof of concept that reveals new unknowns goes back to research"
+  - "nothing stays in limbo: an item that stops being developed gets an owner, a handover, or a sunset"
+  - "staleness is visible: an entry not updated within the agreed window gets flagged at the next review"
 
 # required: true means the section must exist, at summary depth, inside the charter itself.
 sections:
-  - {id: path, title: "Path", required: false, prompt: "Our route through the tree: which nodes, in what order, and why this order."}
+  - {id: map, title: "The map", required: true, prompt: "The tree with each node marked by stage. The thirty-second overview; look here first. Our path through it: which nodes, in what order, and why this order."}
+  - {id: stages, title: "Stages and gates", required: false, prompt: "The stages items move through and what it takes to pass each gate. Use the default ladder below or define your own."}
+  - {id: items, title: "Items", required: true, prompt: "Table of what is being worked on: name, stage, traced to, appetite, decision date, accountable person, last updated."}
+  - {id: decisions_due, title: "Decisions due", required: true, prompt: "The decision dates coming up, the criteria written in advance, and the default if they are not met."}
   - {id: horizons, title: "Horizons", required: false, prompt: "This quarter, this year, longer: what we expect to be true at each."}
-  - {id: next, title: "Next 90 days", required: true, prompt: "Table of commitments: what, owner, traced to, test, date."}
-  - {id: go_no_go, title: "Go / no-go", required: true, prompt: "Dated criteria written before results exist, and the decision each one unlocks."}
   - {id: untraced, title: "Untraced work", required: false, prompt: "Register: what, why, share of envelope used, number of reviews survived."}
   - {id: risks, title: "Risks and dependencies", required: true, prompt: "Top risks. Dependencies on teams the program does not control."}
   - {id: parked, title: "Parking lot", required: false, prompt: "What we are deliberately not doing now, so nobody has to ask."}
+  - {id: names, title: "Naming registry", required: false, prompt: "The canonical name for each thing, so teammates and partners hear the same words for the same things."}
+  - {id: stage_log, title: "Stage log", required: false, prompt: "When things moved stage, and why."}
 
 sub_formats:
-  commitment_card:
-    id:            "short"
-    statement:     "By DATE we will see Y, measured by M against baseline B."
-    owner:         "exactly one"
-    traced_to:     "a question id, or 'untraced'"
-    test:          "the check that decides it"
-    judged_by:     "continuation (research) | kill rule (product, arena)"
-    status:        "proposed | active | passed | stopped"
-    heavier_form:  "an optional fuller bet card, not yet specified"
+  default_stage_ladder:
+    research:          "problem identified, no concrete solution. No owner required, no commitment. Gate out: a concrete hypothesis and an experiment plan with success and failure criteria and a review date."
+    proof_of_concept:  "short, fixed appetite. One accountable person, an experiment plan, success criteria, a decision date. Gate out: a working demonstration validated against the criteria, and a description written down."
+    transitioning:     "being handed to whoever will use it. Appetite defined, a name registered, the receiving party named. Gate out: in use by at least one outside party."
+    in_use:            "serving real users. Measures defined, an owner maintains the entry."
+    maintenance:       "no active development. Within a fixed window: assign an owner, hand over, or sunset."
+  item:
+    name:              "canonical, from the naming registry"
+    stage:             "one of the program's stages"
+    traced_to:         "a question id, or 'untraced'"
+    statement:         "By DATE we will see Y, measured by M against baseline B."
+    appetite:          "time and resource we are willing to spend at this stage"
+    decision_date:     "when it is judged"
+    default_if_missed: "dropped, returned to research, or re-scoped"
+    success_criteria:  "written before the work starts"
+    accountable:       "exactly one person, from proof of concept on"
+    judged_by:         "continuation (research) | kill rule (product, arena)"
+    last_updated:      "date"
 
 checks:
-  - "every commitment has one owner, a date, and a test"
-  - "every commitment cites a question id or is tagged untraced"
-  - "untraced work is within its share of the envelope"
+  - "someone new can find where their work sits on the map in thirty seconds"
+  - "every item past research has one accountable person, an appetite, a decision date, and criteria written in advance"
+  - "every item cites a question id or is tagged untraced"
+  - "nothing is older than the staleness window"
 
 common_failures:
-  - "a list of activities with no tests"
+  - "a schedule of delivery estimates presented as a roadmap"
   - "criteria written after the result"
+  - "items sitting in a stage with no decision date"
   - "a path that is just the order things were started"

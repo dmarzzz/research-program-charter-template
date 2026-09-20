@@ -27,12 +27,12 @@ parts:                      # in order, from the most stable to the most volatil
     writes_as: "first person; a claim a reasonable peer could dispute"
     spec: thesis.yaml
   - id: open_problems
-    question: "What would have to be true, and what do we not know yet?"
+    question: "What do we not know yet? Which unanswered questions stand between the premises and the goal?"
     writes_as: "questions; no dates, no owners"
     spec: open-problems.yaml
   - id: roadmap
-    question: "In what order, by when, and what are we doing now?"
-    writes_as: "commitments; dates, owners, tests"
+    question: "What is being worked on, what stage is each thing in, how do the pieces depend on each other, and when is each next decided?"
+    writes_as: "commitments; stages, owners, decision dates"
     spec: roadmap.yaml
   - id: terms
     question: "Under what authority, with whom, for how long, and how does it end?"

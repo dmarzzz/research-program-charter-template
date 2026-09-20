@@ -1,10 +1,16 @@
 # Research Program Charter: Open Problems in <space>
 id: open_problems
 title: "Open Problems in <space>"
-question: "What would have to be true, and what do we not know yet?"
+question: "What do we not know yet? Which unanswered questions stand between the premises and the goal?"
 writes_as: "questions; no dates, no owners"
 when_written: "the question list is required inside the charter. The standalone public document is written when there is something on offer to outsiders."
 reader: "outside researchers and builders"
+relation_to_thesis: >
+  The thesis lists premises: conditions that have to hold for the goal to be
+  reachable. Each premise is a claim. The open problems are the questions whose
+  answers would establish or refute those claims. A premise says "this has to be
+  true"; an open problem says "here is what we would need to find out to know
+  whether it is, or to make it so".
 updated: "at every review; ids are never renumbered or reused"
 
 # required: true means the section must exist, at summary depth, inside the charter itself.
@@ -19,7 +25,7 @@ sections:
 
 sub_formats:
   question_card:
-    id:                 "stable, never renumbered"
+    id:                 "Q<number>, for example Q7. Stable: never renumbered, never reused."
     question:           "one sentence"
     serves:             "the premise or area it belongs to"
     answer_looks_like:  "what would count as an answer"

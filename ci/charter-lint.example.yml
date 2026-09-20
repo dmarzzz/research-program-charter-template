@@ -1,0 +1,23 @@
+# Example GitHub Actions workflow for a program's own repo.
+# Copy to .github/workflows/charter-lint.yml in the repo that holds your charter.
+# Assumes the filled-in charter lives in charter/ and this format is checked out
+# next to it (as a submodule or, as here, a second checkout).
+name: charter-lint
+on:
+  pull_request:
+    paths: ["charter/**"]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: dmarzzz/research-program-charter
+          path: charter-format
+          # a private format repo needs a token with read access:
+          # token: ${{ secrets.CHARTER_FORMAT_TOKEN }}
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install pyyaml
+      - run: python3 charter-format/lint.py charter
