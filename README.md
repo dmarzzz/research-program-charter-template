@@ -18,9 +18,10 @@ The masthead, the order of the parts, the rules, and the lifecycle are in [spec/
 
 Each part can be written at summary depth inside the charter, or as its own document. Sections marked `required: true` in a part's spec must exist inside the charter either way.
 
-## Checking a charter
+## Checking and sharing a charter
 
 - `python3 lint.py path/to/charter` checks structure: required files and sections, leftover template guidance, question ids, and that every roadmap item traces to a question or is tagged untraced. An example workflow for running it on pull requests is in [ci/charter-lint.example.yml](ci/charter-lint.example.yml).
+- `python3 render.py path/to/charter -o index.html` builds one self-contained HTML page from the markdown: question and item cards, and the tree as inline SVG when Playwright is available at build time.
 - [.claude/skills/review-charter](.claude/skills/review-charter/SKILL.md) is a Claude Code skill that reviews the writing against each part's checks and common failures.
 
 ## License
