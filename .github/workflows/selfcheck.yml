@@ -1,0 +1,25 @@
+# Checks that the templates in formats/ match the specs, and that the lint
+# runs and rejects the blank templates (they still contain their prompts).
+name: selfcheck
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+jobs:
+  selfcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install pyyaml
+      - name: templates are up to date with the specs
+        run: |
+          python3 build.py
+          git diff --exit-code -- formats
+      - name: lint runs and rejects blank templates
+        run: |
+          if python3 lint.py formats; then
+            echo "lint passed on blank templates; it should not" && exit 1
+          fi
