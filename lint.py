@@ -29,10 +29,27 @@ def sections_of(md):
     return {k: "\n".join(v) for k, v in out.items()}
 
 def prose(body):
-    """Body with guidance blockquotes, code fences and rules removed."""
+    """Body with guidance blockquotes, code fences, headings, rules and table markup removed."""
     body = re.sub(r"```.*?```", "", body, flags=re.S)
-    keep = [l for l in body.splitlines() if not l.lstrip().startswith(">") and l.strip() not in ("---", "")]
+    keep = []
+    for l in body.splitlines():
+        if l.lstrip().startswith((">", "#")) or l.strip() in ("---", "") or re.match(r"^\s*\|?[\s:|-]+\|?\s*$", l):
+            continue
+        keep.append(l.replace("|", " ").replace("*", ""))
     return "\n".join(keep)
+
+UNDECIDED = re.compile(r"\b(TBD|TODO|not yet (written|decided|defined|set)|not set|to confirm|none committed)\b", re.I)
+
+def cards(md):
+    """YAML cards found in fenced blocks."""
+    out = []
+    for block in re.findall(r"```yaml\n(.*?)```", md, flags=re.S):
+        try:
+            d = yaml.safe_load(block)
+        except yaml.YAMLError:
+            continue
+        if isinstance(d, dict): out.append(d)
+    return out
 
 def main(argv):
     if len(argv) < 2:
@@ -68,8 +85,9 @@ def main(argv):
             limit = WORD_LIMITS.get((doc, s["id"]))
             if limit and len(text.split()) > limit:
                 warnings.append(f"{doc}.md: \"{s['title']}\" is {len(text.split())} words (limit {limit})")
-        if re.search(r"\b(TBD|TODO|lorem ipsum)\b", md, flags=re.I):
-            warnings.append(f"{doc}.md: contains TBD/TODO placeholders")
+        n_undecided = len(UNDECIDED.findall(md))
+        if n_undecided:
+            warnings.append(f"{doc}.md: {n_undecided} undecided marker(s) (TBD, not yet written, not set, to confirm)")
 
     if "one_pager" in texts:
         n = len(prose(texts["one_pager"]).split())
@@ -90,6 +108,36 @@ def main(argv):
             for ref in [x.strip() for x in t.split(",") if x.strip()]:
                 if ref.lower() != "untraced" and ref not in ids:
                     errors.append(f"roadmap.md: traced_to \"{ref}\" is not a question id in open_problems.md")
+
+    # items past research must carry an appetite, a decision date and one accountable person
+    if "roadmap" in texts:
+        for c in cards(texts["roadmap"]):
+            stage = str(c.get("stage", "")).strip()
+            if not stage or stage == "research": continue
+            for field in ("appetite", "decision_date", "accountable"):
+                v = str(c.get(field, "") or "")
+                if not v.strip() or UNDECIDED.search(v):
+                    errors.append(f"roadmap.md: item \"{c.get('name', '?')}\" is at {stage} without a usable {field}")
+
+    # premises and questions point at each other
+    if "thesis" in texts and "open_problems" in texts:
+        premises = set(re.findall(r"\*\*(P\d+)\.", texts["thesis"]))
+        served = set()
+        for c in cards(texts["open_problems"]):
+            for ref in re.findall(r"\bP\d+\b", str(c.get("serves", ""))):
+                served.add(ref)
+                if premises and ref not in premises:
+                    errors.append(f"open_problems.md: {c.get('id', '?')} serves {ref}, which is not a premise in thesis.md")
+        for p in sorted(premises - served):
+            warnings.append(f"thesis.md: premise {p} has no open problem serving it")
+
+    # the space is written about the world
+    if "space" in texts:
+        for title, body in sections_of(texts["space"]).items():
+            if "shared asset" in title or "steward" in title: continue
+            hits = re.findall(r"\b(we|our|us)\b", prose(body), flags=re.I)
+            if hits:
+                warnings.append(f"space.md: \"{title}\" uses first person ({len(hits)}x); the space is written about the world")
 
     for w in warnings: print(f"warning  {w}")
     for e in errors:   print(f"error    {e}")
