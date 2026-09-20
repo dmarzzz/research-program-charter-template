@@ -62,7 +62,8 @@ def main(argv):
             if s["prompt"] in body:
                 errors.append(f"{doc}.md: \"{s['title']}\" still contains the template guidance")
             text = prose(body)
-            if not text.strip():
+            filled = [l for l in body.splitlines() if l.strip() and not l.lstrip().startswith(">") and l.strip() not in ("---", "```", "```yaml")]
+            if not filled:                                  # cards in code blocks count as content
                 errors.append(f"{doc}.md: \"{s['title']}\" is empty")
             limit = WORD_LIMITS.get((doc, s["id"]))
             if limit and len(text.split()) > limit:
