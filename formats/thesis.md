@@ -20,7 +20,7 @@
 
 ## 4. Premises  *(required in the charter)*
 
-> For the goal to be true, these have to be true. For each: the statement, why we believe it, the result that would make us drop it, and the area of open problems it generates.
+> For the goal to be true, these have to be true. For each: the statement, why we believe it, the result that would make us drop it, which other premises it depends on, and the area of open problems it generates. If the premises stack, order them from the bottom up and say why they stack.
 
 
 ## 5. Success at the end  *(required in the charter)*

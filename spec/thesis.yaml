@@ -12,7 +12,7 @@ sections:
   - {id: simply, title: "Simply stated", required: true, prompt: "200 words, no jargon. Ends with what is not in scope."}
   - {id: example, title: "Worked example", required: false, prompt: "One concrete case, carried through the rest of the document and the open problems."}
   - {id: positions, title: "Positions", required: true, prompt: "Our side of each crux in the space, and why."}
-  - {id: premises, title: "Premises", required: true, prompt: "For the goal to be true, these have to be true. For each: the statement, why we believe it, the result that would make us drop it, and the area of open problems it generates."}
+  - {id: premises, title: "Premises", required: true, prompt: "For the goal to be true, these have to be true. For each: the statement, why we believe it, the result that would make us drop it, which other premises it depends on, and the area of open problems it generates. If the premises stack, order them from the bottom up and say why they stack."}
   - {id: end_state, title: "Success at the end", required: true, prompt: "What exists at the end of the term that does not exist now, and how anyone would check."}
   - {id: baseline, title: "Baseline", required: true, prompt: "How this is done today, by whom, and the thing we have to beat."}
   - {id: why_us, title: "Why us", required: true, prompt: "Evidence, not adjectives."}
