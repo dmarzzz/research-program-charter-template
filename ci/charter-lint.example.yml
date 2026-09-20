@@ -13,9 +13,9 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/checkout@v4
         with:
-          repository: dmarzzz/research-program-charter
+          repository: dmarzzz/research-program-charter-template
           path: charter-format
-          # a private format repo needs a token with read access:
+          # if you keep a private fork of the format, add a token with read access:
           # token: ${{ secrets.CHARTER_FORMAT_TOKEN }}
       - uses: actions/setup-python@v5
         with: {python-version: "3.12"}

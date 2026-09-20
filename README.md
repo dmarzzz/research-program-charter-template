@@ -1,6 +1,14 @@
-# Research Program Charter
+# Research Program Charter Template
 
-A format for describing a research program: where it is working, what it claims, what is unknown, what it is doing, and on what terms. Domain-neutral. Draft 0.3.
+A template for a Research Program Charter: a format for describing a research program. Where it is working, what it claims, what is unknown, what it is doing, and on what terms. Domain-neutral. Draft 0.3.
+
+## Using it
+
+1. Copy the five part templates and the one-pager from [formats/](formats/) into a `charter/` folder in your own repository.
+2. Fill them in. Each section's prompt says what belongs there; delete the prompt when the section is written.
+3. Run `python3 lint.py path/to/charter` until it reports no errors.
+
+Needs Python 3 and PyYAML. `render.py` also needs pandoc.
 
 ## Structure
 

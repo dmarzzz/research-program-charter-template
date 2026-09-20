@@ -1,6 +1,6 @@
 # Status
 
-Last updated 2026-09-19. Private for now; intended to be open-sourced.
+Last updated 2026-09-20. Public since 2026-09-20 as `research-program-charter-template` (renamed from `research-program-charter`). MIT.
 
 ## Where it stands
 
@@ -16,13 +16,10 @@ The agentic research program's charter is the only charter written in this forma
 
 ## Untested
 
-- `ci/charter-lint.example.yml` has never run green; its only user fails at checkout because this repo is private.
+- `ci/charter-lint.example.yml` has never run green; its only user failed at checkout while this repo was private.
 - The supporting document formats (review note, discovery summary, closing report) have never been filled in.
 - The large-program profile in `GUIDANCE.md` is reasoning, not experience.
 
-## Before making it public
+## Going public (2026-09-20)
 
-- Read the README and one template as an outsider would. The audit so far was keyword searches for names, paths and internal systems; it found none.
-- Decide whether to keep the Claude co-author lines in the history (six commits; rewriting is cheap while private).
-- Decide whether `reviews/` ships.
-- MIT license is in place, copyright `dmarzzz`.
+Before the repository was opened, the working tree and every version of every file in the git history were searched for personal names, email addresses, local paths, internal systems and links, and credentials. Nothing was found beyond the license holder's GitHub handle. All commits carry a GitHub no-reply address. `reviews/` ships: it is labelled as a role-played review by AI agents, not real people's opinions. The Claude co-author lines in the history were kept.
